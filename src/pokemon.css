@@ -1,0 +1,227 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .main-container {
+    background-color: #f0f2f5;
+    /* background-color: gray; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    
+  }
+  
+  header {
+    text-align: center;
+    /* margin: 20px; */
+    background-color: #48d0b0;
+    color: #ffffff;
+    width: 100%;
+    padding: 15px;
+    position: fixed;
+    z-index: 1000;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .pokemon-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+    margin-top: 150px;
+    
+  }
+
+
+  @media (max-width: 768px) {
+
+    .pokemon-card  {
+      flex: 1 1 calc(50% - 20px); /* 2 cards per row with gap */
+      max-width: calc(50% - 20px);
+    }
+
+
+    .pokemon-container > .child:only-child {
+      justify-content: center;
+      width: 100%; /* Ensure full width when only one card */
+  }
+    
+    .pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 80px;
+      width: 70px;
+    }
+  }
+  
+  /* Mobile view: 2 cards per row */
+  @media (max-width: 480px) {
+    .pokemon-card  {
+      flex: 1 1 calc(50% - 20px); /* 2 cards per row with gap */
+      max-width: calc(50% - 20px);
+    }
+    
+      
+    /* .parent > .child:only-child {
+      background-color: yellow;  /* Style the only child */
+    
+
+
+    .pokemon-container > .child:only-child {
+      justify-content: center;
+      width: 100%; /* Ensure full width when only one card */
+  }
+
+  /* .pokemon-container.two-cards {
+      flex-direction: row;
+  } */
+
+    .pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 80px;
+      width: 50px;
+    }
+
+  }
+
+  
+  .pokemon-card {
+    background-color: #ffffff;
+    
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .pokemon-card:hover {
+    transform: scale(1.05); /* Slightly increase the size on hover */
+  }
+  
+  .pokemon-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+  }
+  
+  .pokemon-card h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+  }
+  
+  .type {
+    display: inline-block;
+    background-color: #48d0b0;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+  }
+  
+  .pokemon-card p {
+    font-size: 0.9em;
+    color: #333333;
+    margin: 5px 0;
+  }
+  
+
+  footer {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    background-color: #48d0b0;
+    color: #ffffff;
+    font-size: 0.9em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+  
+
+  .pokemon-message{
+   
+    background-color: #ffffff;
+    color: #c04d4d;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    margin-top: 80px;
+    
+    
+  }
+
+  .pokemon-message img {
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  
+  
+ 
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 80px;
+  }
+  
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  button:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+  }
+  
+  .page-number.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  button.prev, button.next {
+    font-weight: bold;
+  }
+  
+  button.prev:disabled, button.next:disabled {
+    background-color: #ddd;
+  }
